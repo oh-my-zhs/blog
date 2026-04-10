@@ -57,6 +57,30 @@ export const getPostBySlug = cache(async (slug: string) => {
   return posts.find((post) => post.slug === slug) ?? null;
 });
 
+export const getPostsByTag = cache(async (tag: string) => {
+  const posts = await getAllPosts();
+  return posts.filter((post) =>
+    post.tags.map((t) => t.toLowerCase()).includes(tag.toLowerCase()),
+  );
+});
+
+export const getAllTags = cache(async () => {
+  const posts = await getAllPosts();
+  const tagCounts = new Map<string, number>();
+  for (const post of posts) {
+    for (const tag of post.tags) {
+      tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+    }
+  }
+  return Array.from(tagCounts.entries())
+    .sort((a, b) => b[1] - a[1])
+    .map(([tag, count]) => ({ tag, count }));
+});
+
+export function getTagSlug(tag: string) {
+  return encodeURIComponent(tag.toLowerCase().replace(/\s+/g, "-"));
+}
+
 export function getPostUrl(slug: string) {
   return `${SITE_URL}/posts/${slug}`;
 }

@@ -66,8 +66,8 @@ export default function RootLayout({
             </Link>
             <nav className="site-nav" aria-label="Global">
               <Link href="/">Posts</Link>
+              <Link href="/tags">Tags</Link>
               <a href="/rss.xml">RSS</a>
-              <a href="/sitemap.xml">Sitemap</a>
               <a href="https://oh-my-zhs.com" target="_blank" rel="noreferrer">
                 Main Site
               </a>

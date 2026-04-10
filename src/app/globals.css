@@ -308,6 +308,193 @@ a {
   text-transform: uppercase;
 }
 
+.chip-link {
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.chip-link:hover {
+  background: rgba(24, 68, 63, 0.18);
+  color: var(--accent-ink);
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 251, 246, 0.84);
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.82rem;
+  color: var(--foreground);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+}
+
+.search-count {
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.no-results {
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Tag cloud in hero panel */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: var(--muted);
+  transition: background 0.15s, color 0.15s;
+}
+
+.tag-pill:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.tag-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.2rem;
+  height: 1.2rem;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  background: rgba(24, 21, 20, 0.08);
+  font-size: 0.6rem;
+}
+
+.tag-pill-all {
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+/* Tags overview page */
+.page-header {
+  padding: 3rem 0 2rem;
+}
+
+.page-title {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.page-subtitle {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.82rem;
+}
+
+.back-link {
+  display: inline-flex;
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.tags-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+.tag-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  background: var(--card);
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.tag-card:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.tag-card:hover .tag-card-name,
+.tag-card:hover .tag-card-count {
+  color: white;
+}
+
+.tag-card-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.tag-card-count {
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+/* Post card h2 link */
+.post-card h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card h2 a:hover {
+  color: var(--accent);
+}
+
 .mini-link {
   min-width: 7.5rem;
   padding: 0.9rem 1rem;

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -70,9 +71,13 @@ export default async function PostPage({ params }: PageProps) {
         </div>
         <div className="chip-row">
           {post.tags.map((tag) => (
-            <span key={tag} className="chip">
+            <Link
+              key={tag}
+              href={`/tags/${encodeURIComponent(tag.toLowerCase().replace(/\s+/g, "-"))}`}
+              className="chip chip-link"
+            >
               {tag}
-            </span>
+            </Link>
           ))}
         </div>
       </header>

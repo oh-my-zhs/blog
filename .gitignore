@@ -1,0 +1,16 @@
+# Vercel
+.vercel
+
+# Next.js
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+*.tsbuildinfo
+next-env.d.ts
+
+# System
+.DS_Store
